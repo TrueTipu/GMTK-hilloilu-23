@@ -5,19 +5,17 @@ using UnityEngine;
 
 class CameraMovement : MonoBehaviour
 {
-    [SerializeField] float smooth;
 
-    Transform playerPos;
+    Transform cameraAnchor;
 
-    public void Init(PlayerMovement _player)
+    public void Init(Transform _cam)
     {
-        playerPos = _player.GetComponent<Transform>();
+        cameraAnchor = _cam;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector2 position = Vector2.Lerp(transform.position, playerPos.position, smooth);
-        transform.position = new Vector3(position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(cameraAnchor.position.x, transform.position.y, transform.position.z); 
     }
 }
 
