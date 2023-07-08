@@ -13,12 +13,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Transform cameraAnchor;
 
-    [SerializeField] Fishing fishing;
+    [SerializeField] TimeAttack fishing;
     [SerializeField] Hide hiding;
 
     bool facingRight = true;
 
-    private void Start()
+    private void OnEnable()
     {
         Helpers.Camera.GetComponent<CameraMovement>().Init(cameraAnchor);
     }
@@ -38,7 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if (fishing.IsFishing || hiding.IsHiding) return;
+        if(hiding != null)
+        {
+            if (hiding.IsHiding) return;
+        }
+        if (fishing.IsDoingStuff) return;
 
         Dir = Input.GetAxisRaw("Horizontal");
         Flip(Dir);
