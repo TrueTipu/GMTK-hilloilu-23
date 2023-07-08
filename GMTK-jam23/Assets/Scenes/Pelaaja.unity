@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishingUI: {fileID: 1021263526}
   fishCapacity: 4
-  mutationFished: 000000000000000000000000
+  mutationFished: 030000000300000003000000
 --- !u!114 &227182181
 MonoBehaviour:
   m_ObjectHideFlags: 0
