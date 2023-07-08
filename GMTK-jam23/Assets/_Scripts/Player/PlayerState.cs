@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerState : Singleton<PlayerState>
 {
+    public float FishCount { get; set; }
+
     State state;
     public State GetState() => state;
     public void SetState(State _state)

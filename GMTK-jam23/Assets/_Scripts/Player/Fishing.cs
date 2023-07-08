@@ -13,6 +13,10 @@ class Fishing : MonoBehaviour
 
     [SerializeField] FishingUI fishingUI;
 
+    [SerializeField] int fishCapacity = 10;
+    int fishCount;
+    public int FishCount { get { return fishCount; } private set { SetFishCount(value);  } }
+
     Fish fish;
     public void SetCanFish(bool _value, Fish _fish)
     {
@@ -20,12 +24,20 @@ class Fishing : MonoBehaviour
         fish = _fish;
     }
 
+
     private void Update()
     {
+
         if(canFish && Input.GetKeyDown(KeyCode.Space) && !IsFishing)
         {
             StartCoroutine(StartFishing());
         }
+
+    }
+    public void SetFishCount(int _value)
+    {
+        fishCount = (int)Mathf.Clamp(_value, 0, fishCapacity);
+        PlayerState.Instance.FishCount = (fishCount / (float)fishCapacity);
     }
 
     IEnumerator StartFishing()
@@ -46,7 +58,7 @@ class Fishing : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)){
                 if(_fishData.CatchMoment - _fishData.CatchTime <= _timer)
                 {
-                    Debug.Log("WOO");
+                    FishCount += 1;
                     break;
                 }
                 else
@@ -60,7 +72,6 @@ class Fishing : MonoBehaviour
         }
         fishingUI.DeActivate();
         IsFishing = false;
-        Debug.Log("myöhässä");
     }
 }
 

@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 
-class Monster : MonoBehaviour
+class Monster : Singleton<Monster>
 {
     int dir = 1;
     [SerializeField] float speed;
@@ -19,10 +19,11 @@ class Monster : MonoBehaviour
     [SerializeField] float movingFarMultiplier;
     [SerializeField] float hidingMultiplier;
     [SerializeField] float defaultIgnoranceMultiplier;
+    [SerializeField] float catchDegrease = 4;
     float agressivity;
     float dangerLevel;
 
-
+    bool eating;
 
     PlayerState player;
 
@@ -36,24 +37,47 @@ class Monster : MonoBehaviour
     {
         Move();
         CalculateAgressivity();
-        CalculateDanger();
+        var _dL = CalculateDanger(transform.position);
+        dangerLevel = _dL != -1 ? _dL : dangerLevel;
+
+        if(dangerLevel >= maxAgressivity *0.95f && player.GetState() != State.Hiding)
+        {
+            //cool animation här
+            Debug.Log("kuolit");
+        }
     }
 
-    private void CalculateDanger()
+    public void CatchFish(Vector2 _fishPos)
     {
-        float _dis = Mathf.Abs(player.transform.position.x - transform.position.x);
-        if (_dis > minDist) return;
+        var _val = Random.value;
+        if(CalculateDanger(_fishPos) * 0.1f >= _val)
+        {
+            Debug.Log(CalculateDanger(_fishPos) * 0.1f);
+            Debug.Log(_val);
+            
+            agressivity = Mathf.Clamp(agressivity - catchDegrease, 0.001f, maxAgressivity);
+            //nappausanim
+        }
+    }
+
+    private float CalculateDanger(Vector2 _position)
+    {
+        float _dis = Mathf.Abs(_position.x - transform.position.x);
+        if (_dis > minDist) return -1;
 
         _dis = Mathf.Clamp(_dis * 2, 1f, minDist * 2);
 
         //Debug.Log(_dis);
         //Debug.Log(a);
-        dangerLevel = (1 / Mathf.Sqrt(_dis)) * agressivity;
+        return (1 / Mathf.Sqrt(_dis)) * agressivity;
     }
 
     void CalculateAgressivity()
     {
         float _distance = Mathf.Abs(player.transform.position.x - transform.position.x);
+
+        if (eating) return;
+
         switch (player.GetState())
         {
             case State.Fishing:

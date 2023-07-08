@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform cameraAnchor;
 
     [SerializeField] Fishing fishing;
-
+    [SerializeField] Hide hiding;
 
     bool facingRight = true;
 
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if (fishing.IsFishing) return;
+        if (fishing.IsFishing || hiding.IsHiding) return;
 
         Dir = Input.GetAxisRaw("Horizontal");
         Flip(Dir);

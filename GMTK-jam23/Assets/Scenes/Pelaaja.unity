@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 227182179}
   - component: {fileID: 227182180}
   - component: {fileID: 227182181}
+  - component: {fileID: 227182182}
+  - component: {fileID: 227182183}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -232,6 +234,7 @@ MonoBehaviour:
   cameraMultiplier: 3.43
   cameraAnchor: {fileID: 418788067}
   fishing: {fileID: 227182179}
+  hiding: {fileID: 227182182}
 --- !u!61 &227182178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -271,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishingUI: {fileID: 1021263526}
+  fishCapacity: 4
 --- !u!114 &227182180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +304,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4f8cedbabf724397a083c988ca80f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &227182182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227182173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359e47843cd1edc4e892afde6c8d8fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishing: {fileID: 227182179}
+--- !u!114 &227182183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227182173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e32a1561bb12146862162234b01afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishing: {fileID: 227182179}
+  fishBaitPrefab: {fileID: -1837280183455420218, guid: 77b628473ce476141b353a5cf9b6d0e1, type: 3}
 --- !u!1 &386750605
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,68 +536,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433038098}
   m_CullTransparentMesh: 1
---- !u!1 &435131377
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 435131378}
-  m_Layer: 0
-  m_Name: right
-  m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &435131378
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435131377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.05, y: -4.57, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &583369014
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 583369015}
-  m_Layer: 0
-  m_Name: left
-  m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &583369015
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583369014}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.36, y: -4.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &789875641
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +646,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021263521
 GameObject:
@@ -745,7 +714,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1021263525
 RectTransform:
