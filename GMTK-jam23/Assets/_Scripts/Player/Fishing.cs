@@ -30,6 +30,7 @@ class Fishing : MonoBehaviour
 
     IEnumerator StartFishing()
     {
+        PlayerState.Instance.SetState(State.Fishing);
         IsFishing = true;
         canFish = false;
         Fish.FishData _fishData = fish.GetData();

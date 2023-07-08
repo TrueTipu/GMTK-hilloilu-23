@@ -15,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Fishing fishing;
 
-    [SerializeField] Transform leftMax;
-    [SerializeField] Transform rightMax;
 
     bool facingRight = true;
 
@@ -36,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
             //transform.localScale *= new Vector2(-1, 1);
             facingRight = !facingRight;
         }
-
     }
 
     void Move()
@@ -46,12 +43,21 @@ public class PlayerMovement : MonoBehaviour
         Dir = Input.GetAxisRaw("Horizontal");
         Flip(Dir);
 
-        if(transform.position.x < leftMax.position.x && Dir < 0)
+        if(Dir != 0)
+        {
+            PlayerState.Instance.SetState(State.Moving);
+        }
+        else
+        {
+            PlayerState.Instance.SetState(State.Idling);
+        }
+
+        if(transform.position.x < Borders.leftX && Dir < 0)
         {
             Velocity = 0;
             return;
         }
-        if (transform.position.x > rightMax.position.x && Dir > 0)
+        if (transform.position.x > Borders.rightX && Dir > 0)
         {
             Velocity = 0;
             return;

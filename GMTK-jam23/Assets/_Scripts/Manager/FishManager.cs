@@ -7,9 +7,6 @@ class FishManager : MonoBehaviour
 {
     [SerializeField] float spawnHeight;
 
-    [SerializeField] float minX;
-    [SerializeField] float maxX;
-
     [SerializeField] float reactTime;
 
     [SerializeField] float minTime;
@@ -32,7 +29,7 @@ class FishManager : MonoBehaviour
     }
     void SpawnFish()
     {
-        Vector2 _pos = new Vector2(UnityEngine.Random.Range(minX, maxX), spawnHeight);
+        Vector2 _pos = new Vector2(UnityEngine.Random.Range(Borders.leftX + 2, Borders.rightX - 2), spawnHeight);
         Fish _newFish = Instantiate(fishPrefab, _pos, Quaternion.identity, this.transform);
         _newFish.Init(UnityEngine.Random.Range(minSize, maxSize), UnityEngine.Random.Range(minTime, maxTime), reactTime,
             UnityEngine.Random.Range(minLifeTime, maxLifeTime), KillFish);
