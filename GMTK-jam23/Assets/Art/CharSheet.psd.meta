@@ -141,12 +141,12 @@ TextureImporter:
       name: Vapa
       rect:
         serializedVersion: 2
-        x: 1428
-        y: 1591
+        x: 1423
+        y: 1596
         width: 97
         height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.9374648, y: 0.034368023}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,8 +166,8 @@ TextureImporter:
         y: 974
         width: 92
         height: 167
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.40632033, y: 0.06994446}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,6 +200,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CharSheet_0
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 729
+        width: 97
+        height: 177
+      alignment: 9
+      pivot: {x: 0.42595744, y: 0.11047191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecad1cedb84df094c83b35fff93a7e85
+      internalID: 533520334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 695
+        width: 117
+        height: 183
+      alignment: 9
+      pivot: {x: 0.42633736, y: 0.15463974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6accb6d8dfd01bd41a1f50534f7a5437
+      internalID: -1971963734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 528
+        width: 262
+        height: 277
+      alignment: 9
+      pivot: {x: 0.46116114, y: 0.1510142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0aaae764008294e9a331e0ff01a568
+      internalID: 3948306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 132
+        width: 587
+        height: 443
+      alignment: 9
+      pivot: {x: 0.61177725, y: 0.17124258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a56a53faf10b5d4795c493f4f78464c
+      internalID: 166739814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -214,8 +298,11 @@ TextureImporter:
       Mies: 1191306594
       CharSheet_3: 924720054
       Vene: 457163851
+      CharSheet_1: -1971963734
       Vapa: 396095374
+      CharSheet_0: 533520334
       CharSheet_4: 166739814
+      CharSheet_2: 3948306
   spritePackingTag: 
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
