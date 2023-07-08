@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
+using System.Collections;
 
 class Monster : Singleton<Monster>
 {
@@ -33,15 +34,31 @@ class Monster : Singleton<Monster>
     private void Start()
     {
         player = PlayerState.Instance;
+        StartCoroutine(Splash());
     }
 
+     IEnumerator Splash()
+    {
+        while (true)
+        {
+            if (Random.value > 0.8f && !eating)
+            {
+                Debug.Log("Hei");
+                animator.SetBool("Splash", true);
+                graphic.position = new Vector3(this.transform.position.x, player.transform.position.y);
+                Invoke(nameof(StopAnim), 0.1f);
+            }
+            yield return new WaitForSeconds(0.5f);
+        }
 
+    }
     private void Update()
     {
         Move();
         CalculateAgressivity();
         var _dL = CalculateDanger(transform.position);
         dangerLevel = _dL != -1 ? _dL : dangerLevel;
+
 
         if(dangerLevel >= maxAgressivity *0.95f && player.GetState() != State.Hiding)
         {
@@ -83,7 +100,10 @@ class Monster : Singleton<Monster>
 
 
     }
-
+    void StopAnim()
+    {
+        animator.SetBool("Splash", false);
+    }
     private float CalculateDanger(Vector2 _position)
     {
         float _dis = Mathf.Abs(_position.x - transform.position.x);
