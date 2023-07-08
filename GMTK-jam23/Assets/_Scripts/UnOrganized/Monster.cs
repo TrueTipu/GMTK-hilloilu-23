@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEditor;
 
 class Monster : Singleton<Monster>
 {
@@ -25,6 +25,9 @@ class Monster : Singleton<Monster>
 
     bool eating;
 
+    [SerializeField] Transform graphic;
+    [SerializeField] Animator animator;
+
     PlayerState player;
 
     private void Start()
@@ -47,6 +50,7 @@ class Monster : Singleton<Monster>
         }
     }
 
+
     public void CatchFish(Vector2 _fishPos)
     {
         var _val = Random.value;
@@ -54,10 +58,30 @@ class Monster : Singleton<Monster>
         {
             Debug.Log(CalculateDanger(_fishPos) * 0.1f);
             Debug.Log(_val);
-            
-            agressivity = Mathf.Clamp(agressivity - catchDegrease, 0.001f, maxAgressivity);
-            //nappausanim
+
+            CatchFishDone(_fishPos);
         }
+    }
+    public void CatchFishDone(Vector2 _fishPos)
+    {
+        Debug.Log("KALA");
+        agressivity = Mathf.Clamp(agressivity - catchDegrease, 0.001f, maxAgressivity);
+
+        Vector2 _offset = new Vector2(0, 30);
+        graphic.position = _fishPos - _offset;
+
+        animator.SetBool("IsJumping", true);
+
+        eating = true;
+        Invoke(nameof(StopEating), 1);
+    }
+
+    void StopEating()
+    {
+        eating = false;
+        animator.SetBool("IsJumping", false);
+
+
     }
 
     private float CalculateDanger(Vector2 _position)

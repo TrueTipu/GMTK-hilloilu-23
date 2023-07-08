@@ -19,7 +19,7 @@ public class FishBait : MonoBehaviour
     {
         if(transform.position.y < Borders.FloorY)
         {
-            Monster.Instance.CatchFish(transform.position);
+            Monster.Instance.CatchFishDone(transform.position);
             Destroy(gameObject);
         } 
     }

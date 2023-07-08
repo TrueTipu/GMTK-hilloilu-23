@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-
+using UnityEditor;
 
 class Fishing : TimeAttack
 {
-
+    [MenuItem("Dev/Fishing")]
+    public static void CatchFishTest()
+    {
+        FindObjectOfType<Fishing>().SetFishCount(4);
+    }
     [SerializeField] int fishCapacity = 10;
     int fishCount;
     public int FishCount { get { return fishCount; } private set { SetFishCount(value);  } }
