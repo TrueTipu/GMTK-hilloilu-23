@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LampLight : MonoBehaviour
 {
+    [SerializeField] float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,10 @@ public class LampLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer -= Time.deltaTime;
+
+        if (timer <= 0){
+            Destroy (this.gameObject);
+        }
     }
 }

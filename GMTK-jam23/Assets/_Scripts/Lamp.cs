@@ -10,7 +10,7 @@ public class Lamp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = timerAmount;
+        timer = 0.5f;
     }
 
     // Update is called once per frame
