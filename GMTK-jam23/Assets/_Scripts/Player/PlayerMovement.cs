@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float deceleration;
     public float Velocity { get; private set; }
     public float Dir { get; private set; }
+    [SerializeField] float cameraMultiplier = 5;
 
     [SerializeField] Transform cameraAnchor;
 
@@ -78,6 +79,6 @@ public class PlayerMovement : MonoBehaviour
         Velocity = Mathf.MoveTowards(Velocity, _targetSpeed, _maxSpeedChange);
 
         transform.position += new Vector3(Velocity, 0, 0);
-        cameraAnchor.position = transform.position + new Vector3(10*Velocity, 0,0);
+        cameraAnchor.position = transform.position + new Vector3(cameraMultiplier * Velocity, 0,0);
     }
 }
