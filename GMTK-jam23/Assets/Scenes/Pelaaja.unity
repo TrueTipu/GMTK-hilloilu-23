@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 227182178}
   - component: {fileID: 227182179}
   - component: {fileID: 227182180}
+  - component: {fileID: 227182181}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -153,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 227182173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.86, y: -5.4659, z: -4}
-  m_LocalScale: {x: 2.7440214, y: 0.8547581, z: 0.43837786}
+  m_LocalScale: {x: 1.6525868, y: 0.514778, z: 0.26401305}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 418788067}
@@ -231,8 +232,6 @@ MonoBehaviour:
   cameraMultiplier: 3.43
   cameraAnchor: {fileID: 418788067}
   fishing: {fileID: 227182179}
-  leftMax: {fileID: 583369015}
-  rightMax: {fileID: 435131378}
 --- !u!61 &227182178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -286,9 +285,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localPosition: {x: 0, y: -0.25, z: 0}
   localRotation: {x: 0, y: 0, z: -180}
-  sprite: {fileID: 21300000, guid: 95ec9c1e0d80ca14584112b3a33d7cf0, type: 3}
+  sprite: {fileID: 0}
   spriteLayer: Default
   spriteLayerOrder: -5
+--- !u!114 &227182181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227182173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d4f8cedbabf724397a083c988ca80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &386750605
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &789875642
 MonoBehaviour:
   m_ObjectHideFlags: 0
