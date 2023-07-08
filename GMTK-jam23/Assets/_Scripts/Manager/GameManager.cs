@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-
+using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
 
@@ -16,5 +16,22 @@ public class GameManager : Singleton<GameManager>
     public void ChangeToLastScene()
     {
         
+    }
+    public void EndScene()
+    {
+
+    }
+    void LoadScene(int _index)
+    {
+        SceneManager.LoadScene(_index);
+    }
+
+    void LoadScene(int[] _scenes)
+    {
+        SceneManager.LoadScene(_scenes[0]);
+        for (int i = 1; i < _scenes.Length; i++)
+        {
+            SceneManager.LoadSceneAsync(_scenes[i], LoadSceneMode.Additive);
+        }
     }
 }
