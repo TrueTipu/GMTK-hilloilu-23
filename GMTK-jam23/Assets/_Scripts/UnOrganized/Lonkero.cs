@@ -3,17 +3,15 @@ using System.Collections;
 using System;
 
 [RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
-public class Fish : MonoBehaviour, Catchable
+public class Lonkero : MonoBehaviour, Catchable
 {
 
     FishData fishData;
 
-    Action<Fish> killFish;
+    Action<Lonkero> killFish;
 
-
-    public void Init(float _size, float _catchMoment, float _catchTime, float _lifeTime, Action<Fish> _killFish)
+    public void Init(float _catchMoment, float _catchTime, float _lifeTime, Action<Lonkero> _killFish)
     {
-        transform.localScale *= _size;
         fishData = new FishData(_catchTime, _catchMoment);
         killFish = _killFish;
         Invoke(nameof(InvokeKillFish), _lifeTime);
@@ -32,14 +30,14 @@ public class Fish : MonoBehaviour, Catchable
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Hei");
-            collision.GetComponent<Fishing>().SetCanFish(true, this);
+            collision.GetComponent<Hitting>().SetCanFish(true, this);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Fishing>().SetCanFish(false, null);
+            collision.GetComponent<Hitting>().SetCanFish(false, null);
         }
     }
 }
