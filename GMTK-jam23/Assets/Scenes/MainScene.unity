@@ -178,7 +178,7 @@ Transform:
   m_Children:
   - {fileID: 2040608770}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &42850797
 SpriteRenderer:
@@ -1806,7 +1806,7 @@ Transform:
   - {fileID: 1788848989}
   - {fileID: 247425297}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6161217905580089896
 PrefabInstance:
