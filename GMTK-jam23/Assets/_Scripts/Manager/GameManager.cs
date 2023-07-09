@@ -7,7 +7,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class GameManager : Singleton<GameManager>
 {
     [field: SerializeField] public PostProcessVolume PPObjectReference { get; private set; }
-
+    [SerializeField] Animator animator;
     [SerializeField] Phase phase;
     public int Phase => phase.phase;
 
@@ -33,7 +33,10 @@ public class GameManager : Singleton<GameManager>
 
     public IEnumerator NextScene()
     {
+
         yield return new WaitForSeconds(1);
+        animator.SetTrigger("Trans");
+        yield return new WaitForSeconds(0.4f);
         LoadScene(nextScene);
     }
 

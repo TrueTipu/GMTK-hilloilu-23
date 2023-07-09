@@ -526,8 +526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sevenUps:
-  - {fileID: 533520334, guid: 86037ba3a7ebbbe428f7a04d19005d44, type: 3}
   - {fileID: -1971963734, guid: 86037ba3a7ebbbe428f7a04d19005d44, type: 3}
+  - {fileID: 3948306, guid: 86037ba3a7ebbbe428f7a04d19005d44, type: 3}
   - {fileID: 3948306, guid: 86037ba3a7ebbbe428f7a04d19005d44, type: 3}
   sevenUpRenderer: {fileID: 100976343}
   pamahdus: {fileID: 7993944994941646097, guid: fc206329d0889dc43959ebb1bcafd5b9, type: 3}
