@@ -107,11 +107,17 @@ class Fishing : TimeAttack
         {
             if(GameManager.Instance.Phase == 0)
             {
-                TextDisplay.Instance.Show("Mutatoidu"); 
+                TextDisplay.Instance.Show("Mutatoidu");
+                MusicPlayer.Instance.SetSourceActive(3);
+            }
+            if (GameManager.Instance.Phase == 1)
+            {
+                MusicPlayer.Instance.SetSourceActive(5);
             }
             //mutaattikala
             AudioManager.Instance.Play("Kala");
             GameManager.Instance.ChangePhase();
+
             fishCaught = 0;
             FishCount = 0;
         }

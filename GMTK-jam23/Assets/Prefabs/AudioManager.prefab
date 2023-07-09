@@ -48,7 +48,7 @@ MonoBehaviour:
   sounds:
   - name: Narina
     clip: {fileID: 8300000, guid: f3e96b664e5934e468c2fe41df0d20dc, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     stereo: 0
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
@@ -56,7 +56,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Narina2
     clip: {fileID: 8300000, guid: 601e6a89cbd5c974ab5e0e7d999173b7, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     stereo: 0
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
@@ -64,6 +64,110 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Narina3
     clip: {fileID: 8300000, guid: 4c40c87c65061d54198d8dfd2a3d183e, type: 3}
+    volume: 0.7
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: MerenAanet
+    clip: {fileID: 8300000, guid: a3a3ae4f1558a56438bd3fa06bd331e6, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
+    source: {fileID: 0}
+  - name: LamppuOn
+    clip: {fileID: 8300000, guid: 9913ac487bce4b846a8515dfd94f83c5, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: LamppuOff
+    clip: {fileID: 8300000, guid: e3482eed3ba97c049b6d1b1c80ab6630, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Heitto
+    clip: {fileID: 8300000, guid: 76ea9435435de1b438307a378ea71e83, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: LandSplash
+    clip: {fileID: 8300000, guid: 3ab32b6d7c205d94183f25edc5643703, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: OnkiSplash
+    clip: {fileID: 8300000, guid: 01a60d370ea17a24d9d5f192a084518f, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Splash3
+    clip: {fileID: 8300000, guid: 2a53b277c75fd074aa74f7a4f5d4b8b6, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Kala
+    clip: {fileID: 8300000, guid: 9b88c0568440cbb419f193d7b56b5c61, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: KalaMumina
+    clip: {fileID: 8300000, guid: b8e7d9e74ba4c714c819419e14440527, type: 3}
+    volume: 0.6
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Mumina1
+    clip: {fileID: 8300000, guid: 7b1da345e6bcc864ebd1d15ad873c4a1, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Mumina2
+    clip: {fileID: 8300000, guid: e387e8b8ca009b84aadb862a4727c3ae, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Mumina3
+    clip: {fileID: 8300000, guid: 0bd42ecef0dcd254789a7fc31710ed2a, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Mumina5
+    clip: {fileID: 8300000, guid: bb2cc37bd9a91fe478cf6f775be5629b, type: 3}
     volume: 1
     pitch: 1
     stereo: 0
@@ -86,117 +190,53 @@ MonoBehaviour:
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
+  - name: M1
+    clip: {fileID: 8300000, guid: 9645d5b2eab639b408b481935d6842ac, type: 3}
     volume: 1
     pitch: 1
     stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
+  - name: M2
+    clip: {fileID: 8300000, guid: a95dfa7000950b842b37995cd8b88965, type: 3}
     volume: 1
     pitch: 1
     stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
+  - name: M3
+    clip: {fileID: 8300000, guid: 8a0c3d29c0cd4f34da651603aaa9cd82, type: 3}
     volume: 1
     pitch: 1
     stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
+  - name: M4
+    clip: {fileID: 8300000, guid: b0f7b36307f54a94aa42a009b5ebe515, type: 3}
     volume: 1
     pitch: 1
     stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
+  - name: M5
+    clip: {fileID: 8300000, guid: c5b8cadb8a3d47742954d1bbe3ce3e96, type: 3}
     volume: 1
     pitch: 1
     stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
+  - name: M6
+    clip: {fileID: 8300000, guid: 9645d5b2eab639b408b481935d6842ac, type: 3}
+    volume: 0.3
     pitch: 1
     stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    stereo: 0
-    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
-    loop: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
     source: {fileID: 0}
 --- !u!1 &6288138758263271789
 GameObject:
@@ -242,5 +282,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5347f9adc28044b8948db94d3d0d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 6288138756552632391}
-  layers: []

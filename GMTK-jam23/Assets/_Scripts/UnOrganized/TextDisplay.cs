@@ -14,6 +14,8 @@ public class TextDisplay : Singleton<TextDisplay>
     {
         TextField _text = textFields.Find( t => t.Name == name);
 
+        AudioManager.Instance.PlayRandom(new string[] { "Mumina1", "Mumina2", "Mumina3", "Mumina5" });
+
         img.gameObject.SetActive(true);
         text.text = _text.ToString();
         currentField = _text;

@@ -25,6 +25,7 @@ public class ThrowFish : MonoBehaviour
             if (!GameManager.Instance.MonsterActive)
             {
                 GameManager.Instance.MonsterActive = true;
+                MusicPlayer.Instance.SetSourceActive(2);
                 Invoke(nameof(ShowVaro), 5);
             }
 

@@ -48,11 +48,12 @@ public class AudioManager : MonoBehaviour
 
 
     }
-    public void Play(string name)
+    public AudioSource Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
         s.source.Play();
+        return s.source;
     }
     public void PlayRandom(string[] names)
     {
@@ -60,12 +61,22 @@ public class AudioManager : MonoBehaviour
         Debug.Log(name);
         Play(name);
     }
-    public void PlayOnLoop(string name)
+    public AudioSource PlayOnLoop(string name)
     {
 
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
-        if (s.source.isPlaying) return;
+        if (s.source.isPlaying) return null;
         s.source.Play();
+        return s.source;
+    }
+    public bool IsPlaying(string name)
+    {
+
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s.source.isPlaying) return true;
+        else return false;
+
     }
 }

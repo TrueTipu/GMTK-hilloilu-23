@@ -2,30 +2,61 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 
-public class MusicPlayer : Singleton<AudioManager>
+public class MusicPlayer : Singleton<MusicPlayer>
 {
+    AudioSource[] sources = new AudioSource[6];
 
-    [SerializeField] AudioManager audioManager;
-
-    public Sound[] layers;
-
-
-
-
-
-    void Awake()
+    private void Start()
     {
-
-
-        foreach (Sound s in layers)
+        if (!AudioManager.Instance.IsPlaying("M1"))
         {
-            s.source = audioManager.gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.loop = s.loop;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.outputAudioMixerGroup = s.mixer;
+            sources[0] = AudioManager.Instance.PlayOnLoop("M1");
+            sources[1] = AudioManager.Instance.PlayOnLoop("M2");
+            sources[2] = AudioManager.Instance.PlayOnLoop("M3");
+            sources[3] = AudioManager.Instance.PlayOnLoop("M4");
+            sources[4] = AudioManager.Instance.PlayOnLoop("M5");
+            sources[5] = AudioManager.Instance.PlayOnLoop("M6");
+        }
+        switch (GameManager.Instance.Phase)
+        {
+            case 0:
+                for (int i = 0; i < 1; i++)
+                {
+                    sources[i].volume = 1;
+                }
+                for (int i = 1; i < 6; i++)
+                {
+                    sources[i].volume = 0;
+                }
+                break;
+            case 1:
+                for (int i = 0; i < 3; i++)
+                {
+                    sources[i].volume = 1;
+                }
+                for (int i = 3; i < 6; i++)
+                {
+                    sources[i].volume = 0;
+                }
+                break;
+            case 3:
+                for (int i = 0; i < 6; i++)
+                {
+                    sources[i].volume = 1;
+                }
+                break;
+        }
+    }
 
+    public void SetSourceActive(int stage)
+    {
+        for (int i = 0; i < stage; i++)
+        {
+            sources[i].volume = 1;
+        }
+        for (int i = stage; i < 6; i++)
+        {
+            sources[i].volume = 0;
         }
     }
 
