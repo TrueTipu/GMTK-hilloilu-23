@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Taustat.unity
     guid: 12f67a6613dd32d4b952e0ff4929fa7f
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: b71834d2619a6a6468bba6b7e2048209
+  - enabled: 1
+    path: Assets/Scenes/Hollow Knight.unity
+    guid: a5e4b80422e002b4d9c21c89d7c3b9be
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 20a0871d1c02c664bb1bd50d1896398e
   m_configObjects: {}
