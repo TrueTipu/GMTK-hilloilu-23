@@ -6,7 +6,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
 {
     AudioSource[] sources = new AudioSource[6];
 
-    private void Start()
+    private void OnEnable()
     {
         if (!AudioManager.Instance.IsPlaying("M1"))
         {

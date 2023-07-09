@@ -5,9 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.Instance.Play("TitleTheme");
+        AudioManager.Instance.MusicPlayer.gameObject.SetActive(false);
+    }
+
+
     [SerializeField] Animator anim;
     public void PlayGame()
     {
+        AudioManager.Instance.Stop("TitleTheme");
+        AudioManager.Instance.MusicPlayer.gameObject.SetActive(true);
         Time.timeScale = 1;
         StartCoroutine(LoadNextScene());
         anim.SetTrigger("Trans");

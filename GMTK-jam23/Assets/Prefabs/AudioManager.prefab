@@ -48,7 +48,7 @@ MonoBehaviour:
   sounds:
   - name: Narina
     clip: {fileID: 8300000, guid: f3e96b664e5934e468c2fe41df0d20dc, type: 3}
-    volume: 0.7
+    volume: 0.909
     pitch: 1
     stereo: 0
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
@@ -56,7 +56,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Narina2
     clip: {fileID: 8300000, guid: 601e6a89cbd5c974ab5e0e7d999173b7, type: 3}
-    volume: 0.7
+    volume: 0.929
     pitch: 1
     stereo: 0
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
@@ -64,7 +64,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Narina3
     clip: {fileID: 8300000, guid: 4c40c87c65061d54198d8dfd2a3d183e, type: 3}
-    volume: 0.7
+    volume: 0.916
     pitch: 1
     stereo: 0
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
@@ -238,6 +238,15 @@ MonoBehaviour:
     mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
     loop: 1
     source: {fileID: 0}
+  - name: TitleTheme
+    clip: {fileID: 8300000, guid: b3c2a757a01642c428dff55c705f8d6f, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
+    source: {fileID: 0}
+  MusicPlayer: {fileID: 6288138758263271791}
 --- !u!1 &6288138758263271789
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6288138758263271790
 Transform:
   m_ObjectHideFlags: 0

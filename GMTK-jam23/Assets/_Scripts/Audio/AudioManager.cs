@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance { get; private set; }
     public Sound[] sounds;
 
+    [SerializeField] public MusicPlayer MusicPlayer;
+
     void Awake()
     {
         if (Instance == null)

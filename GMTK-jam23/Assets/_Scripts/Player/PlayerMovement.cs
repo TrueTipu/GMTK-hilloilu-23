@@ -18,12 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
     bool facingRight = true;
 
-    private void OnEnable()
-    {
-        Helpers.Camera.GetComponent<CameraMovement>().Init(cameraAnchor);
-    }
     private void Start()
     {
+        Helpers.Camera.GetComponent<CameraMovement>().Init(cameraAnchor);
         StartCoroutine(Narise());
         AudioManager.Instance.PlayOnLoop("MerenAanet");
     }
