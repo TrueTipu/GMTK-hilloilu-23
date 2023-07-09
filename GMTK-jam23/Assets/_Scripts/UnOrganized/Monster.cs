@@ -107,11 +107,10 @@ class Monster : Singleton<Monster>
     public void CatchFish(Vector2 _fishPos)
     {
         var _val = Random.value;
-        if(CalculateDanger(_fishPos) * 0.1f >= _val)
+        Debug.Log("Yri");
+        if(CalculateDanger(_fishPos) * 0.05f >= _val)
         {
-            Debug.Log(CalculateDanger(_fishPos) * 0.1f);
-            Debug.Log(_val);
-
+            Debug.Log("Susses");
             CatchFishDone(_fishPos);
         }
     }
