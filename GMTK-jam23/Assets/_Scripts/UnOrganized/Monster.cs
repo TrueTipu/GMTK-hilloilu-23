@@ -28,6 +28,8 @@ class Monster : Singleton<Monster>
     float agressivity;
     float dangerLevel;
 
+    bool showText = false;
+
     bool eating;
 
     [SerializeField] Transform graphic;
@@ -53,6 +55,11 @@ class Monster : Singleton<Monster>
             }
             Debug.Log("Here");
             audioTick.Play();
+            if(!showText && GameManager.Instance.Phase == 0)
+            {
+                showText = true;
+                TextDisplay.Instance.Show("Lyhty");
+            }
 
             yield return new WaitForSeconds(Mathf.Clamp((maxAgressivity / dangerLevel) / 2, 0, 5));
         }
@@ -75,6 +82,9 @@ class Monster : Singleton<Monster>
     private void Update()
     {
         Move();
+
+        if (!GameManager.Instance.MonsterActive) return;
+
         CalculateAgressivity();
         var _dL = CalculateDanger(player.transform.position);
         dangerLevel = _dL != -1 ? _dL : dangerLevel;

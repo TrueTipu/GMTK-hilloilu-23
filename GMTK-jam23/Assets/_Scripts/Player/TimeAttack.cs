@@ -36,7 +36,7 @@ abstract class TimeAttack : MonoBehaviour
     }
 
 
-    private void Update()
+    protected virtual void Update()
     {
 
         if (canFish && Input.GetKeyDown(KeyCode.Space) && !IsDoingStuff)

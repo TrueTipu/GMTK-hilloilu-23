@@ -17,6 +17,8 @@ class Fishing : TimeAttack
 
     int fishCaught = 0;
 
+
+
     [SerializeField]
     int[] mutationFished = new int[3];
 
@@ -24,6 +26,32 @@ class Fishing : TimeAttack
     [SerializeField] Sprite[] sprites;
 
 
+    bool onText;
+
+    void TeachToFish(bool _canFish = true)
+    {
+        if(fishCaught == 0 && GameManager.Instance.Phase == 0 && _canFish && !onText)
+        {
+            onText = true;
+            TextDisplay.Instance.Show("Fish");
+        }
+        else if (!_canFish){
+            onText = false;
+        }
+    }
+    void TeachToCatch()
+    {
+        if (fishCaught == 0 && GameManager.Instance.Phase == 0)
+        {
+            TextDisplay.Instance.Show("Catch");
+        }
+    }
+    protected override void Update()
+    {
+        base.Update();
+
+        TeachToFish(canFish);
+    }
 
     public void SetFishCount(int _value)
     {
@@ -33,6 +61,7 @@ class Fishing : TimeAttack
     }
     protected IEnumerator StartFishing()
     {
+        TeachToCatch();
         PlayerState.Instance.SetState(State.Fishing);
         IsDoingStuff = true;
         canFish = false;
@@ -76,6 +105,10 @@ class Fishing : TimeAttack
         fishCaught += 1;
         if (fishCaught >= mutationFished[GameManager.Instance.Phase])
         {
+            if(GameManager.Instance.Phase == 0)
+            {
+                TextDisplay.Instance.Show("Mutatoidu"); 
+            }
             //mutaattikala
             AudioManager.Instance.Play("Kala");
             GameManager.Instance.ChangePhase();

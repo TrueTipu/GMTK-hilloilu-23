@@ -12,7 +12,22 @@ public class GameManager : Singleton<GameManager>
     public int Phase => phase.phase;
     // Use this for initialization
 
-    
+    bool monsterActive;
+    public bool MonsterActive
+    {
+        get
+        {
+            if (phase.phase == 0)
+            {
+                return monsterActive;
+            }
+            else return true;
+        }
+        set
+        {
+            monsterActive = value;
+        }
+    }
 
     public void ChangePhase()
     {
