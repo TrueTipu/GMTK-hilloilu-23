@@ -61,7 +61,7 @@ class Monster : Singleton<Monster>
                 TextDisplay.Instance.Show("Lyhty");
             }
 
-            yield return new WaitForSeconds(Mathf.Clamp((maxAgressivity / dangerLevel), 0, 5));
+            yield return new WaitForSeconds(Mathf.Clamp((maxAgressivity / dangerLevel / 1.5f), 0, 5));
         }
     }
      IEnumerator Splash()
@@ -93,11 +93,14 @@ class Monster : Singleton<Monster>
         if(dangerLevel >= maxAgressivity *1.8f && player.GetState() != State.Hiding)
         {
             player.SetState(State.Dying);
-            Invoke(nameof(Reload), 285);
+            Invoke(nameof(Reload), 4.5f);
+            AudioManager.Instance.Play("PuliPuli");
+            CatchFishDone(player.transform.position);
         }
     }
     void Reload()
     {
+        AudioManager.Instance.Stop("PuliPuli");
         GameManager.Instance.LoadCurrentScene();
     }
 
@@ -123,7 +126,7 @@ class Monster : Singleton<Monster>
         animator.SetBool("IsJumping", true);
 
         eating = true;
-        Invoke(nameof(StopEating), 3.09f);
+        Invoke(nameof(StopEating), 3.15f);
     }
 
     void StopEating()

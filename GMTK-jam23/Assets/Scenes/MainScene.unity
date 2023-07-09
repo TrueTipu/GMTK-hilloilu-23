@@ -1657,6 +1657,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6288138756552632391, guid: b35daa9af00f026478afba27113b5a9e, type: 3}
+      propertyPath: sounds.Array.data[16].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c0e6bcd7643b2b43bbedc5bc30d8a3e, type: 3}
+    - target: {fileID: 6288138756552632391, guid: b35daa9af00f026478afba27113b5a9e, type: 3}
+      propertyPath: sounds.Array.data[16].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288138756552632391, guid: b35daa9af00f026478afba27113b5a9e, type: 3}
+      propertyPath: sounds.Array.data[16].name
+      value: PuliPuli
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288138756552632391, guid: b35daa9af00f026478afba27113b5a9e, type: 3}
+      propertyPath: sounds.Array.data[16].stereo
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6288138756552632408, guid: b35daa9af00f026478afba27113b5a9e, type: 3}
       propertyPath: m_RootOrder
       value: 2
