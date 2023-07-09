@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 370c90b6a44817946a14e1d8f5ef7342
+  - enabled: 1
     path: Assets/Scenes/Pelaaja.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 7c6c837f509bdd24cbadac278e9dcff1
+  - enabled: 1
+    path: Assets/Scenes/Taustat.unity
+    guid: 12f67a6613dd32d4b952e0ff4929fa7f
   m_configObjects: {}
