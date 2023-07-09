@@ -20,12 +20,16 @@ class Fishing : TimeAttack
     [SerializeField]
     int[] mutationFished = new int[3];
 
+    [SerializeField] SpriteRenderer fishPile;
+    [SerializeField] Sprite[] sprites;
+
 
 
     public void SetFishCount(int _value)
     {
         fishCount = (int)Mathf.Clamp(_value, 0, fishCapacity);
-        PlayerState.Instance.FishCount = (fishCount / (float)fishCapacity);
+        fishPile.sprite = sprites[fishCount];
+        // PlayerState.Instance.FishCount = (fishCount / (float)fishCapacity);
     }
     protected IEnumerator StartFishing()
     {
