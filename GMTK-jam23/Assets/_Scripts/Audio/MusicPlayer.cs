@@ -18,6 +18,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
             sources[4] = AudioManager.Instance.PlayOnLoop("M5");
             sources[5] = AudioManager.Instance.PlayOnLoop("M6");
         }
+        if (GameManager.Instance == null) return;
         switch (GameManager.Instance.Phase)
         {
             case 0:

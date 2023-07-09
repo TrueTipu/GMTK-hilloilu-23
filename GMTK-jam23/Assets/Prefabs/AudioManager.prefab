@@ -294,6 +294,14 @@ MonoBehaviour:
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
     loop: 0
     source: {fileID: 0}
+  - name: EndTheme
+    clip: {fileID: 8300000, guid: fea858f7eec9ce542b01aa25817639ef, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
+    source: {fileID: 0}
   MusicPlayer: {fileID: 6288138758263271791}
 --- !u!1 &6288138758263271789
 GameObject:
