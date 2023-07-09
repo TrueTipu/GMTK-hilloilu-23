@@ -20,6 +20,7 @@ public class FishBait : MonoBehaviour
         if(transform.position.y < Borders.FloorY)
         {
             Monster.Instance.CatchFish(transform.position);
+            AudioManager.Instance.Play("LandSplash");
             Destroy(gameObject);
         } 
     }

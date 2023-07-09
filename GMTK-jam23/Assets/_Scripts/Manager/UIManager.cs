@@ -7,8 +7,4 @@ public class UIManager : MonoBehaviour
     [SerializeField] Image fishMeter;
 
 
-    void Update()
-    {
-        fishMeter.fillAmount =  PlayerState.Instance.FishCount;
-    }
 }

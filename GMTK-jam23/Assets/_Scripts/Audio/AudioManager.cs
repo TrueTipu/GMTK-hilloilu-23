@@ -6,14 +6,14 @@ public class AudioManager : MonoBehaviour
 {
     //AudioManager.instance.Play("Ääni tähän");
 
-    public static AudioManager Istance;
+    public static AudioManager Instance { get; private set; }
     public Sound[] sounds;
 
     void Awake()
     {
-        if (Istance == null)
+        if (Instance == null)
         {
-            Istance = this;
+            Instance = this;
         }
         else
         {
@@ -53,6 +53,12 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
         s.source.Play();
+    }
+    public void PlayRandom(string[] names)
+    {
+        string name = names[Mathf.FloorToInt(UnityEngine.Random.Range(0, names.Length-0.1f))];
+        Debug.Log(name);
+        Play(name);
     }
     public void PlayOnLoop(string name)
     {

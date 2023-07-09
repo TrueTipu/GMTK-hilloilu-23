@@ -22,8 +22,11 @@ class FishManager : MonoBehaviour
 
     List<Fish> fishes = new List<Fish>();
 
+    int fishCount;
+
     void KillFish(Fish _fish)
     {
+        fishCount -= 1;
         fishes.Remove(_fish);
         Destroy(_fish.gameObject);
     }
@@ -38,9 +41,10 @@ class FishManager : MonoBehaviour
 
     private void Update()
     {
-        if(fishes.Count < 3)
+        if(fishCount < 2)
         {
-            SpawnFish();
+            fishCount += 1;
+            Invoke(nameof(SpawnFish), 7f);
         }
     }
 

@@ -22,7 +22,37 @@ public class PlayerMovement : MonoBehaviour
     {
         Helpers.Camera.GetComponent<CameraMovement>().Init(cameraAnchor);
     }
+    private void Start()
+    {
+        StartCoroutine(Narise());
+        AudioManager.Instance.PlayOnLoop("MerenAanet");
+    }
 
+    IEnumerator Narise()
+    {
+        while (true)
+        {
+            if (hiding != null)
+            {
+                if (hiding.IsHiding)
+                {
+                    yield return null;
+                    continue;
+                }
+            }
+            if (fishing.IsDoingStuff) 
+            {
+                yield return null;
+                continue;
+            }
+            
+            AudioManager.Instance.PlayRandom(new string[]{ "Narina", "Narina2", "Narina3"});
+
+
+
+            yield return new WaitForSeconds(Random.Range(5, 15));
+        }
+    }
     void FixedUpdate()
     {
         Move();

@@ -12,6 +12,7 @@ public class ThrowFish : MonoBehaviour
         {
             fishing.SetFishCount(fishing.FishCount - 1);
             Instantiate(fishBaitPrefab, transform.position, Quaternion.identity);
+            AudioManager.Instance.Play("Heitto");
         }
     }
 }

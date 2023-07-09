@@ -20,6 +20,7 @@ public class Hide : MonoBehaviour
         {
             GameManager.Instance.PPObjectReference.profile = hide;
             IsHiding = true;
+            AudioManager.Instance.Play("LamppuOn");
             light.color = colorOff;
             lampScript.enabled = false;
             PlayerState.Instance.SetState(State.Hiding);
@@ -28,6 +29,7 @@ public class Hide : MonoBehaviour
         {
             GameManager.Instance.PPObjectReference.profile = noHide;
             IsHiding = false;
+            AudioManager.Instance.Play("LamppuOff");
             lampScript.enabled = true;
             light.color = Color.white;
         }

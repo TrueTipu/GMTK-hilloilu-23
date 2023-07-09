@@ -42,6 +42,8 @@ class Fishing : TimeAttack
 
         fishingUI.Init(_length, _fishData.CatchMoment);
 
+        AudioManager.Instance.Play("OnkiSplash");
+
         yield return null;
 
         while (_timer <= _length)
@@ -69,10 +71,13 @@ class Fishing : TimeAttack
 
     public override void RightTiming()
     {
+        AudioManager.Instance.Play("OnkiSplash");
+        AudioManager.Instance.Play("KalaMumina");
         fishCaught += 1;
         if (fishCaught >= mutationFished[GameManager.Instance.Phase])
         {
             //mutaattikala
+            AudioManager.Instance.Play("Kala");
             GameManager.Instance.ChangePhase();
             fishCaught = 0;
             FishCount = 0;
