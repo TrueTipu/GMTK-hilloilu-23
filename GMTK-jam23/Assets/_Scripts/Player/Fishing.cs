@@ -27,7 +27,41 @@ class Fishing : TimeAttack
         fishCount = (int)Mathf.Clamp(_value, 0, fishCapacity);
         PlayerState.Instance.FishCount = (fishCount / (float)fishCapacity);
     }
+    protected IEnumerator StartFishing()
+    {
+        PlayerState.Instance.SetState(State.Fishing);
+        IsDoingStuff = true;
+        canFish = false;
+        FishData _fishData = fish.GetData();
+        float _timer = 0;
+        float _length = _fishData.CatchMoment + _fishData.CatchTime;
 
+        fishingUI.Init(_length, _fishData.CatchMoment);
+
+        yield return null;
+
+        while (_timer <= _length)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (_fishData.CatchMoment - _fishData.CatchTime <= _timer)
+                {
+
+                    RightTiming();
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            _timer += Time.deltaTime;
+
+            yield return null;
+        }
+        fishingUI.DeActivate();
+        IsDoingStuff = false;
+    }
 
     public override void RightTiming()
     {
@@ -44,6 +78,11 @@ class Fishing : TimeAttack
             FishCount += 1;
         }
         return;
+    }
+
+    public override void DoStuff()
+    {
+        StartCoroutine(StartFishing());
     }
 }
 

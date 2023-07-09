@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4bf5131112fc394e8030bcb8e081139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishThrowStrength: 500
+  fishThrowStrength: 800
 --- !u!50 &-2536905005610392096
 Rigidbody2D:
   serializedVersion: 4

@@ -301,6 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359e47843cd1edc4e892afde6c8d8fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noHide: {fileID: 11400000, guid: 9311f181eab139945aa2df99be2ab7f8, type: 2}
+  hide: {fileID: 11400000, guid: e674e284ed2071842ac4034f91f2b71d, type: 2}
+  light: {fileID: 463877485}
+  lampScript: {fileID: 463877484}
+  colorOff: {r: 0.62352943, g: 0.46666667, b: 0.46666667, a: 1}
   fishing: {fileID: 227182179}
 --- !u!114 &227182183
 MonoBehaviour:

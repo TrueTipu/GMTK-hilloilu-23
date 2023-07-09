@@ -7,11 +7,15 @@ using System.Collections;
 class Monster : Singleton<Monster>
 {
     int dir = 1;
+
+    [SerializeField] SpoopyPants audioTick;
+
     [SerializeField] float speed;
     [SerializeField] float directionChangeChance;
 
     [SerializeField] float maxAgressivity;
     [SerializeField] float minDist;
+    [SerializeField] float minDist2;
 
     [Header("Agressivity variables")]
     [SerializeField] float agressivitySpeed;
@@ -35,13 +39,29 @@ class Monster : Singleton<Monster>
     {
         player = PlayerState.Instance;
         StartCoroutine(Splash());
+        StartCoroutine(Sound());
     }
 
+    IEnumerator Sound()
+    {
+        while (true)
+        {
+            if (eating || (maxAgressivity / dangerLevel) > 2 || dangerLevel < 1)
+            {
+                yield return null;
+                continue;
+            }
+            Debug.Log("Here");
+            audioTick.Play();
+
+            yield return new WaitForSeconds(Mathf.Clamp((maxAgressivity / dangerLevel) / 2, 0, 5));
+        }
+    }
      IEnumerator Splash()
     {
         while (true)
         {
-            if (Random.value > 0.8f && !eating)
+            if (Random.value > 0.95f && !eating)
             {
                 Debug.Log("Hei");
                 animator.SetBool("Splash", true);
@@ -56,14 +76,15 @@ class Monster : Singleton<Monster>
     {
         Move();
         CalculateAgressivity();
-        var _dL = CalculateDanger(transform.position);
+        var _dL = CalculateDanger(player.transform.position);
         dangerLevel = _dL != -1 ? _dL : dangerLevel;
 
 
-        if(dangerLevel >= maxAgressivity *0.95f && player.GetState() != State.Hiding)
+        if(dangerLevel >= maxAgressivity *1.8f && player.GetState() != State.Hiding)
         {
             //cool animation här
             Debug.Log("kuolit");
+            GameManager.Instance.LoadCurrentScene();
         }
     }
 
@@ -90,7 +111,7 @@ class Monster : Singleton<Monster>
         animator.SetBool("IsJumping", true);
 
         eating = true;
-        Invoke(nameof(StopEating), 1);
+        Invoke(nameof(StopEating), 3.09f);
     }
 
     void StopEating()
@@ -107,13 +128,14 @@ class Monster : Singleton<Monster>
     private float CalculateDanger(Vector2 _position)
     {
         float _dis = Mathf.Abs(_position.x - transform.position.x);
-        if (_dis > minDist) return -1;
+        if (_dis > minDist) return 0;
 
-        _dis = Mathf.Clamp(_dis * 2, 1f, minDist * 2);
-
-        //Debug.Log(_dis);
-        //Debug.Log(a);
-        return (1 / Mathf.Sqrt(_dis)) * agressivity;
+        if(_dis < minDist2)
+        {
+            return 2 * agressivity;
+        }
+        else { return agressivity; }
+       
     }
 
     void CalculateAgressivity()

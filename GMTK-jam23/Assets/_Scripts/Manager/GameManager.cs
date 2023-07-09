@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 public class GameManager : Singleton<GameManager>
 {
+    [field: SerializeField] public PostProcessVolume PPObjectReference { get; private set; }
 
-    public int Phase { get; private set; }
+    [SerializeField] Phase phase;
+    public int Phase => phase.phase;
     // Use this for initialization
+
+    
 
     public void ChangePhase()
     {
-        Phase += 1;
+        phase.phase += 1;
     }
 
     public void ChangeToLastScene()
@@ -20,6 +26,15 @@ public class GameManager : Singleton<GameManager>
     public void EndScene()
     {
 
+    }
+    public void LoadCurrentScene()
+    {
+        int[] scenes = new int[SceneManager.sceneCount];
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            scenes[i] = SceneManager.GetSceneAt(i).buildIndex;
+        }
+        LoadScene(scenes);
     }
     void LoadScene(int _index)
     {

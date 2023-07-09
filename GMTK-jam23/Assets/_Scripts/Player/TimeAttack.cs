@@ -22,13 +22,13 @@ public struct FishData
 }
 abstract class TimeAttack : MonoBehaviour
 {
-    public bool IsDoingStuff { get; private set; }
+    public bool IsDoingStuff { get; protected set; }
 
-    [SerializeField] FishingUI fishingUI;
+    [SerializeField] protected FishingUI fishingUI;
 
 
-    Catchable fish;
-    bool canFish;
+    protected Catchable fish;
+    protected bool canFish;
     public void SetCanFish(bool _value, Catchable _fish)
     {
         canFish = _value;
@@ -41,48 +41,14 @@ abstract class TimeAttack : MonoBehaviour
 
         if (canFish && Input.GetKeyDown(KeyCode.Space) && !IsDoingStuff)
         {
-            StartCoroutine(StartFishing());
+            DoStuff();
         }
 
     }
 
 
-    protected IEnumerator StartFishing()
-    {
-        PlayerState.Instance.SetState(State.Fishing);
-        IsDoingStuff = true;
-        canFish = false;
-        FishData _fishData = fish.GetData();
-        float _timer = 0;
-        float _length = _fishData.CatchMoment + _fishData.CatchTime;
 
-        fishingUI.Init(_length, _fishData.CatchMoment);
-
-        yield return null;
-
-        while (_timer <= _length)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (_fishData.CatchMoment - _fishData.CatchTime <= _timer)
-                {
-
-                    RightTiming();
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            _timer += Time.deltaTime;
-
-            yield return null;
-        }
-        fishingUI.DeActivate();
-        IsDoingStuff = false;
-    }
-
+    public abstract void DoStuff();
     public abstract void RightTiming();
 }
 

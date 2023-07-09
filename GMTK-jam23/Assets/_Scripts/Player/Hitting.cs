@@ -10,9 +10,12 @@ class Hitting : TimeAttack
     int hitShot = 0;
 
     Lonkero longerr;
-    
 
-
+    public override void DoStuff()
+    {
+        //Noms
+        RightTiming();
+    }
 
     public override void RightTiming()
     {
