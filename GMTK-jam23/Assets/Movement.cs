@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Movement : MonoBehaviour
+{
+    [SerializeField] float speed;
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position -= new Vector3(0, speed * Time.deltaTime);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+}
