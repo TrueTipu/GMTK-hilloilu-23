@@ -236,6 +236,7 @@ MonoBehaviour:
   cameraAnchor: {fileID: 418788067}
   fishing: {fileID: 227182179}
   hiding: {fileID: 227182182}
+  animator: {fileID: 1953649907}
 --- !u!61 &227182178
 BoxCollider2D:
   m_ObjectHideFlags: 0

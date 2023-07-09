@@ -6,8 +6,9 @@ public class MusicPlayer : Singleton<MusicPlayer>
 {
     AudioSource[] sources = new AudioSource[6];
 
-    private void OnEnable()
+    public void Init()
     {
+
         if (!AudioManager.Instance.IsPlaying("M1"))
         {
             sources[0] = AudioManager.Instance.PlayOnLoop("M1");
@@ -46,6 +47,10 @@ public class MusicPlayer : Singleton<MusicPlayer>
                 }
                 break;
         }
+    }
+    private void Start()
+    {
+        Init();
     }
 
     public void SetSourceActive(int stage)

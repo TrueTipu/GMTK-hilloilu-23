@@ -16,7 +16,7 @@ public class Hide : MonoBehaviour
     [SerializeField] Fishing fishing;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !fishing.IsDoingStuff)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !fishing.IsDoingStuff && PlayerState.Instance.GetState() != State.Dying)
         {
             GameManager.Instance.PPObjectReference.profile = hide;
             IsHiding = true;

@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] TimeAttack fishing;
     [SerializeField] Hide hiding;
 
+    [SerializeField] Animator animator;
+
     bool facingRight = true;
 
     private void Start()
@@ -69,7 +71,15 @@ public class PlayerMovement : MonoBehaviour
         {
             if (hiding.IsHiding) return;
         }
-        if (fishing.IsDoingStuff) return;
+        if (fishing.IsDoingStuff || PlayerState.Instance.GetState() == State.Dying)
+        {
+            if (PlayerState.Instance.GetState() == State.Dying)
+            {
+                animator.SetTrigger("Sink");
+            }
+            return;
+        }
+
 
         Dir = Input.GetAxisRaw("Horizontal");
         Flip(Dir);

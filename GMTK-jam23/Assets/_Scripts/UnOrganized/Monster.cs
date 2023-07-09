@@ -61,7 +61,7 @@ class Monster : Singleton<Monster>
                 TextDisplay.Instance.Show("Lyhty");
             }
 
-            yield return new WaitForSeconds(Mathf.Clamp((maxAgressivity / dangerLevel) / 2, 0, 5));
+            yield return new WaitForSeconds(Mathf.Clamp((maxAgressivity / dangerLevel), 0, 5));
         }
     }
      IEnumerator Splash()
@@ -92,12 +92,14 @@ class Monster : Singleton<Monster>
 
         if(dangerLevel >= maxAgressivity *1.8f && player.GetState() != State.Hiding)
         {
-            //cool animation här
-            Debug.Log("kuolit");
-            GameManager.Instance.LoadCurrentScene();
+            player.SetState(State.Dying);
+            Invoke(nameof(Reload), 285);
         }
     }
-
+    void Reload()
+    {
+        GameManager.Instance.LoadCurrentScene();
+    }
 
     public void CatchFish(Vector2 _fishPos)
     {

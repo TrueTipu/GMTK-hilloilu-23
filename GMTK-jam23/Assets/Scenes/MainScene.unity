@@ -163,6 +163,7 @@ MonoBehaviour:
   cameraAnchor: {fileID: 2040608770}
   fishing: {fileID: 42850798}
   hiding: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!4 &42850796
 Transform:
   m_ObjectHideFlags: 0
@@ -1700,6 +1701,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6288138758263271789, guid: b35daa9af00f026478afba27113b5a9e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35daa9af00f026478afba27113b5a9e, type: 3}
 --- !u!4 &1757913217 stripped
@@ -1756,7 +1761,7 @@ MonoBehaviour:
   speed: 2
   directionChangeChance: 0.5
   maxAgressivity: 20
-  minDist: 15
+  minDist: 30
   minDist2: 5
   agressivitySpeed: 0.2
   fishingMultiplier: 5
@@ -1782,7 +1787,7 @@ MonoBehaviour:
   s:
     name: Scary
     clip: {fileID: 8300000, guid: 35ec1c70659927e49a98061cb2d8ccd7, type: 3}
-    volume: 1
+    volume: 0.35
     pitch: 1
     stereo: 0
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}

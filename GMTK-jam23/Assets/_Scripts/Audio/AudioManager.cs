@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] public MusicPlayer MusicPlayer;
 
+
     void Awake()
     {
         if (Instance == null)
@@ -21,7 +22,7 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        Debug.Log("t");
 
         foreach (Sound s in sounds)
         {
@@ -76,6 +77,8 @@ public class AudioManager : MonoBehaviour
     {
 
         Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s == null) return false;
 
         if (s.source.isPlaying) return true;
         else return false;

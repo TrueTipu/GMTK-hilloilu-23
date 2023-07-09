@@ -17,6 +17,7 @@ public class Menu : MonoBehaviour
     {
         AudioManager.Instance.Stop("TitleTheme");
         AudioManager.Instance.MusicPlayer.gameObject.SetActive(true);
+        AudioManager.Instance.MusicPlayer.Init();
         Time.timeScale = 1;
         StartCoroutine(LoadNextScene());
         anim.SetTrigger("Trans");

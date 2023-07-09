@@ -39,7 +39,7 @@ abstract class TimeAttack : MonoBehaviour
     protected virtual void Update()
     {
 
-        if (canFish && Input.GetKeyDown(KeyCode.Space) && !IsDoingStuff)
+        if (canFish && Input.GetKeyDown(KeyCode.Space) && !IsDoingStuff && PlayerState.Instance.GetState() != State.Dying)
         {
             DoStuff();
         }

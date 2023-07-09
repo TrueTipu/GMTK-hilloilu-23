@@ -20,4 +20,5 @@ public enum State
     Moving,
     Hiding,
     Idling,
+    Dying
 }
