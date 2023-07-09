@@ -43,7 +43,10 @@ class Monster : Singleton<Monster>
         StartCoroutine(Splash());
         StartCoroutine(Sound());
     }
-
+    public void MultiPlyAgressivity(float _val)
+    {
+        agressivitySpeed *= _val;
+    }
     IEnumerator Sound()
     {
         while (true)
@@ -95,6 +98,10 @@ class Monster : Singleton<Monster>
             player.SetState(State.Dying);
             Invoke(nameof(Reload), 4.5f);
             AudioManager.Instance.Play("PuliPuli");
+            AudioManager.Instance.PlayRandom(new string[] { "Mor1", "Mor2", "Mor3", "Mor4", "Mor5", "Mor6", });
+            AudioManager.Instance.PlayRandom(new string[] { "Mor1", "Mor2", "Mor3", "Mor4", "Mor5", "Mor6", });
+            AudioManager.Instance.PlayRandom(new string[] { "Mor1", "Mor2", "Mor3", "Mor4", "Mor5", "Mor6", });
+            AudioManager.Instance.PlayRandom(new string[] { "Mor1", "Mor2", "Mor3", "Mor4", "Mor5", "Mor6", });
             CatchFishDone(player.transform.position);
         }
     }
@@ -119,6 +126,8 @@ class Monster : Singleton<Monster>
         Debug.Log("KALA");
         agressivity = Mathf.Clamp(agressivity - catchDegrease, 0.001f, maxAgressivity);
 
+        AudioManager.Instance.PlayRandom(new string[] { "Mor1", "Mor2", "Mor3", "Mor4", "Mor5", "Mor6", });
+        AudioManager.Instance.PlayRandom(new string[] { "Mor1", "Mor2", "Mor3", "Mor4", "Mor5", "Mor6", });
         Vector2 _offset = new Vector2(0, 30);
         graphic.position = _fishPos - _offset;
 

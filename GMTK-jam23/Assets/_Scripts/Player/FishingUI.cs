@@ -9,7 +9,7 @@ public class FishingUI : MonoBehaviour
     Vector3 defaultSize;
     [SerializeField] RectTransform targetSize;
 
-    float speed;
+    Vector2 speed;
 
     private void Start()
     {
@@ -21,7 +21,8 @@ public class FishingUI : MonoBehaviour
     public void Init(float _length, float _catchMoment)
     {
         circle.sizeDelta = defaultSize;
-        speed = ( (circle.sizeDelta.x - targetSize.sizeDelta.x) / _catchMoment);
+        speed.x = ( (circle.sizeDelta.x - targetSize.sizeDelta.x) / _catchMoment);
+        speed.y = ((circle.sizeDelta.y - targetSize.sizeDelta.y) / _catchMoment);
         fishUI.SetActive(true);
     }
     public void DeActivate()
@@ -33,7 +34,7 @@ public class FishingUI : MonoBehaviour
     {
         if (fishUI.activeSelf)
         {
-            circle.sizeDelta -= Vector2.one * speed * Time.deltaTime;
+            circle.sizeDelta -= new Vector2(speed.x * Time.deltaTime, speed.y * Time.deltaTime);
         }
     }
 }

@@ -17,8 +17,8 @@ class Fishing : TimeAttack
 
     int fishCaught = 0;
 
-
-
+    [SerializeField] PlayerSkin skin;
+ 
     [SerializeField]
     int[] mutationFished = new int[3];
 
@@ -61,6 +61,7 @@ class Fishing : TimeAttack
     }
     protected IEnumerator StartFishing()
     {
+        yield return null;
         TeachToCatch();
         PlayerState.Instance.SetState(State.Fishing);
         IsDoingStuff = true;
@@ -108,12 +109,15 @@ class Fishing : TimeAttack
             if(GameManager.Instance.Phase == 0)
             {
                 TextDisplay.Instance.Show("Mutatoidu");
+                Monster.Instance.MultiPlyAgressivity(1.5f);
                 MusicPlayer.Instance.SetSourceActive(3);
             }
             if (GameManager.Instance.Phase == 1)
             {
+                Monster.Instance.MultiPlyAgressivity(2f);
                 MusicPlayer.Instance.SetSourceActive(5);
             }
+            skin.ChangeSkin(1);
             //mutaattikala
             AudioManager.Instance.Play("Kala");
             GameManager.Instance.ChangePhase();

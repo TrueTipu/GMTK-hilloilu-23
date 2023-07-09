@@ -10,6 +10,8 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] Phase phase;
     public int Phase => phase.phase;
+
+    [SerializeField] int nextScene;
     // Use this for initialization
 
     bool monsterActive;
@@ -27,6 +29,12 @@ public class GameManager : Singleton<GameManager>
         {
             monsterActive = value;
         }
+    }
+
+    public IEnumerator NextScene()
+    {
+        yield return new WaitForSeconds(1);
+        LoadScene(nextScene);
     }
 
     public void ChangePhase()
