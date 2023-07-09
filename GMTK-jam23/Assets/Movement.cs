@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
         }
         if(transform.position.y < -90)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

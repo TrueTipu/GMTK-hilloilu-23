@@ -1706,7 +1706,7 @@ MonoBehaviour:
   s:
     name: Scary
     clip: {fileID: 8300000, guid: 35ec1c70659927e49a98061cb2d8ccd7, type: 3}
-    volume: 0.35
+    volume: 0.826
     pitch: 1
     stereo: 0
     mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
@@ -1862,6 +1862,10 @@ PrefabInstance:
     - target: {fileID: 6161217905718731470, guid: 4417cd87686cc1d4cbeea5f054cbd1e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161217905718731471, guid: 4417cd87686cc1d4cbeea5f054cbd1e1, type: 3}
+      propertyPath: nextScene
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6161217905718731471, guid: 4417cd87686cc1d4cbeea5f054cbd1e1, type: 3}
       propertyPath: <PPObjectReference>k__BackingField

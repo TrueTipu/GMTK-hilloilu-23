@@ -6773,7 +6773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 467, y: -270}
+  m_AnchoredPosition: {x: 406, y: -111}
   m_SizeDelta: {x: -997.3083, y: -651.6589}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030354442
@@ -6800,7 +6800,7 @@ MonoBehaviour:
 
     Graphic: Monninen
 
-    Music+audio: HiskiXD'
+    Music+audio: NTHarvest'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715f6972a4f2227418c579aeb4a097be, type: 2}
   m_sharedMaterial: {fileID: -2953941003926025436, guid: 715f6972a4f2227418c579aeb4a097be, type: 2}

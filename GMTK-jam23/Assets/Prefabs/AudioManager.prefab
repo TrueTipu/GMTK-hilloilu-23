@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6288138756552632390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 528.59875, y: 299.12738, z: -4.6974535}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.16042736, y: 0.16042736, z: 0.16042736}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6288138758263271790}
@@ -296,11 +296,27 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: EndTheme
     clip: {fileID: 8300000, guid: fea858f7eec9ce542b01aa25817639ef, type: 3}
+    volume: 0.196
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 1
+    source: {fileID: 0}
+  - name: Ending
+    clip: {fileID: 8300000, guid: e3e79645216735242ac4bfdf74f71ef4, type: 3}
     volume: 1
     pitch: 1
     stereo: 0
     mixer: {fileID: -1777857054888193663, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
     loop: 1
+    source: {fileID: 0}
+  - name: PUM
+    clip: {fileID: 8300000, guid: 3b87c5e2d874a674fa629c592b7f5a3e, type: 3}
+    volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -504666465552017909, guid: 5ec92941e2b0a374db70b96a12a1f70d, type: 2}
+    loop: 0
     source: {fileID: 0}
   MusicPlayer: {fileID: 6288138758263271791}
 --- !u!1 &6288138758263271789

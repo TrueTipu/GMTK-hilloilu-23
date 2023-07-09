@@ -53,6 +53,7 @@ public class AudioManager : MonoBehaviour
     }
     public AudioSource Play(string name)
     {
+        Debug.Log("call");
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
         s.source.Play();
@@ -66,7 +67,7 @@ public class AudioManager : MonoBehaviour
     }
     public AudioSource PlayOnLoop(string name)
     {
-
+        Debug.Log("plz?");
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
         if (s.source.isPlaying) return null;
